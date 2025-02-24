@@ -7,6 +7,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Navigation Styles */
+.navbar {
+    background: rgba(45, 27, 105, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-blue);
+}
+
+.nav-link.project-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.status-badge {
+    background: #10B981;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}
         /* Modern CSS with Enhanced Features */
         :root {
             --primary-color: #2563eb;
@@ -897,7 +961,27 @@
         }
     </style>
 </head>
-<body>    <!-- Hero Section -->
+<body>  
+    <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="image/Screenshot 2025-02-22 224711.png" alt="AmerKrishna Logo">
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="comprehensive-status.html" class="nav-link">Services</a>
+                <a href="about-us.html" class="nav-link">About</a>
+                <a href="live-status.html" class="nav-link project-status">
+                    <i class="fas fa-chart-line"></i>
+                    Project Status
+                    <span class="status-badge">LIVE</span>
+                </a>
+                <a href="contact.html" class="nav-link active">Contact Us</a>
+            </div>
+        </div>
+    </nav><!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Software Development & IT Solutions <br>Transforming Ideas into Powerful Solutions</h1>
